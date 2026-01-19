@@ -261,7 +261,7 @@ function loadPDF() {
     if (!selections.peptide || !selections.ff || !selections.water) return;
 
     const pdfPath = `pdf/${selections.peptide}_${selections.ff}_${selections.water}.pdf`;
-    document.getElementById("viewer").src = pdfPath;
+    window.open(pdfPath, "_blank");
     document.getElementById("info").innerText = "Loaded file: " + pdfPath;
 }
 </script>
