@@ -261,8 +261,10 @@ function loadPDF() {
     if (!selections.peptide || !selections.ff || !selections.water) return;
 
     const pdfPath = `pdf/${selections.peptide}_${selections.ff}_${selections.water}.pdf`;
-    window.open(pdfPath, "_blank");
-    document.getElementById("info").innerText = "Loaded file: " + pdfPath;
+    const link = document.createElement("a");
+    link.href = pdfPath;
+    link.target = "_blank";
+    link.click();
 }
 </script>
 
