@@ -8,7 +8,7 @@ The peptides studied have the following characteristics.
 <tr><th>Peptide</th><th>PDB Code</th><th>Sequence</th><th>Motif</th><th>Percentage of peptide adopting motif </th></tr>
 </thead>
 <tfoot>
-<tr><td>B2</td><th><a href="https://www.science.org/doi/10.1126/science.1871600" target="_blank" rel="noopener noreferrer">2GB1(41-56)</a></th><th>GEWTYDDATKTFTVTE </th><th>ß-hairpin</th><th> <a href="https://www.nature.com/articles/nsb0994-584 target="_blank" rel="noopener noreferrer"> 50-60% </a> </th></tr>
+<tr><td>B2</td><th><a href="https://www.science.org/doi/10.1126/science.1871600" target="_blank" rel="noopener noreferrer">2GB1(41-56)</a></th><th>GEWTYDDATKTFTVTE </th><th>ß-hairpin</th><th> <a href="https://www.nature.com/articles/nsb0994-584" target="_blank" rel="noopener noreferrer"> 50-60% </a> </th></tr>
 </tfoot>
 <tbody>
 <tr><td> H1 </td><th><a href="https://pubs.acs.org/doi/10.1021/bi000208x" target="_blank" rel="noopener noreferrer"> 1DJF </a></th><th>QAPAYKKAAKKLAES </th><th> α-helix  </th><th> <a href="https://pubs.acs.org/doi/10.1021/bi000208x" target="_blank" rel="noopener noreferrer"> 0-10% </a>  </th></tr>
