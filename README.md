@@ -2,7 +2,7 @@
 <center> <img src="tocAMBER.png" alt="" width="600" height="323"></center> <br>
 <p style="text-align:justify"> On this page we present the results of a comparative study in which 95 combinations of AMBER Force Fields and water models are used to simulate 4 different peptides performing Molecular Dynamics (MD) simulations.
  The four peptides have different secondary structures, and we verify which Force Field-Water Model combination better reproduces the experimental arrangment. Details about the studied systems and the performed analysis can be found in <a href="https://pubs.acs.org/doi/10.1021/bi000208x"> this paper </a>.   
-The peptides studied have the following characteristics: 
+The peptides studied have the following characteristics: </p>
 <table style="margin: 0 auto;">
 <thead>
 <tr><th>Peptide</th><th>PDB Code</th><th>Sequence</th><th>Motif</th><th>Percentage of peptide adopting motif </th></tr>
@@ -17,6 +17,7 @@ The peptides studied have the following characteristics:
 <a href="https://pubs.acs.org/doi/abs/10.1021/bi00185a041" target="_blank" rel="noopener noreferrer"> 0-10% </a>  </th></tr>
 </tbody>
 </table>
+<p style="text-align:justify">
 The five Force Fields tested are:
 <ul>
  <li><a href="https://onlinelibrary.wiley.com/doi/10.1002/prot.22711" target="_blank" rel="noopener noreferrer" > ff99SB-ILDN </a> , <a href="https://pubs.acs.org/doi/10.1021/acs.jctc.5b00255" target="_blank" rel="noopener noreferrer" > ff14SB </a> , <a href="https://pubs.acs.org/doi/10.1021/acs.jctc.9b00591" target="_blank" rel="noopener noreferrer" >  ff19SB </a>, <a href="https://pubs.acs.org/doi/10.1021/acs.jpcb.7b02320" target="_blank" rel="noopener noreferrer" > ff-FB15 </a>, and <a href="https://pubs.acs.org/doi/10.1021/acs.jctc.6b00567" target="_blank" rel="noopener noreferrer" > ff15ipq </a>  with the nineteen Water Models: </li>
@@ -29,7 +30,7 @@ The five Force Fields tested are:
 
 <br>
 To visualize the results, it is necessary to select a <b>Peptide</b>, a <b>Force Field</b> and a <b>Water Model</b> <a href="selezione.html"> <b>here</b>  </a>.
-
+</p>
 <hr>
 <font size="2"> Michele Casoria, Marina Macchiagodena, Anna Maria Papini, Claudia Andreini, Marco Pagliai,Piero Procacci <br>
  Dipartimento di Chimica "Ugo Schiff", Università degli Studi di Firenze, Via della Lastruccia 3, 50019 Sesto Fiorentino, Italy <br>
