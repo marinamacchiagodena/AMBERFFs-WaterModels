@@ -75,7 +75,18 @@ h1 {
     padding-bottom: 6px;
     text-align: center;
 }
+.colonna[data-col="water"] {
+  display: flex;
+  gap: 10px; /* spazio tra le due colonne */
+}
 
+.colonna[data-col="water"] .sub-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* spazio tra pulsanti */
+  flex: 1; /* occupa metà della colonna */
+}
+   
 /* =========================
    BOTTONI
    ========================= */
@@ -210,29 +221,32 @@ Select a <b>Peptide</b>, an <b>AMBER Force Field</b>, and a <b>Water Model</b> t
     <button class="btn" data-val="ff-FB15">FB15</button>
   </div>
 
-  <!-- WATER MODEL -->
-  <div class="colonna" data-col="water">
-    <h3>Water Model</h3>
+ <div class="colonna" data-col="water">
+  <h3>Water Model</h3>
+  <div class="sub-col">
     <button class="btn" data-val="SPC">SPC</button>
     <button class="btn" data-val="TIP3P">TIP3P</button>
     <button class="btn" data-val="SPC-E">SPC/E</button>
     <button class="btn" data-val="TIP3P-EW">TIP3P-Ew</button>
     <button class="btn" data-val="SPC-Eb">SPC/Eb</button>
     <button class="btn" data-val="TIP3P-FB">TIP3P-FB</button>
-    <button class="btn" data-val="SPC-ε">SPC/&#949</button>
+    <button class="btn" data-val="SPC-ε">SPC/ε</button>
     <button class="btn" data-val="OPC3">OPC3</button>
     <button class="btn" data-val="TIP3-ST">TIP3P-ST</button>
+  </div>
+  <div class="sub-col">
     <button class="btn" data-val="TIP4P">TIP4P</button>
     <button class="btn" data-val="TIP4P-EW">TIP4P-Ew</button>
     <button class="btn" data-val="TIP4P-2005">TIP4P/2005</button>
     <button class="btn" data-val="TIP4P-FB">TIP4P-FB</button>
     <button class="btn" data-val="OPC">OPC</button>
-    <button class="btn" data-val="TIP4P-ε">TIP4P/&#949</button>
+    <button class="btn" data-val="TIP4P-ε">TIP4P/ε</button>
     <button class="btn" data-val="TIP4P-D">TIP4P-D</button>
     <button class="btn" data-val="a99SB-disp">a99SB-disp</button>
     <button class="btn" data-val="TIP4P-ST">TIP4P-ST</button>
     <button class="btn" data-val="TIP4P-BG">TIP4P-BG</button>
   </div>
+</div>
 
 </div>
 
