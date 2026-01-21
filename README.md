@@ -28,7 +28,7 @@ The five Force Fields tested are:
 </ul>
 
 <br>
-To visualize the results, it is necessary to select a Peptide, a Force Field and a Water Model  <a href="selezione.html"> here </a>.
+To visualize the results, it is necessary to select a <b>Peptide</b>, a <b>Force Field</b> and a <b>Water Model</b> <a href="selezione.html"> <b>here</b>  </a>.
 
 <hr>
 <font size="2"> Michele Casoria, Marina Macchiagodena, Anna Maria Papini, Claudia Andreini, Marco Pagliai,Piero Procacci <br>
