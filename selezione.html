@@ -77,15 +77,22 @@ h1 {
 }
 .colonna[data-col="water"] {
   display: flex;
-  gap: 10px; /* spazio tra le due colonne */
+  flex-direction: column; /* verticale come le altre colonne */
+  gap: 10px; /* spazio tra titolo e pulsanti */
+}
+
+.colonna[data-col="water"] .sub-col-wrapper {
+  display: flex; /* i due sub-col diventano affiancati */
+  gap: 10px; /* spazio tra le due sotto-colonne */
 }
 
 .colonna[data-col="water"] .sub-col {
   display: flex;
   flex-direction: column;
-  gap: 8px; /* spazio tra pulsanti */
-  flex: 1; /* occupa metà della colonna */
+  gap: 8px;
+  flex: 1; /* occupa metà della riga */
 }
+
    
 /* =========================
    BOTTONI
