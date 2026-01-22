@@ -92,7 +92,46 @@ h1 {
   gap: 8px;
   flex: 1; /* occupa metà della riga */
 }
+.peptide-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
 
+.peptide-btn {
+    cursor: pointer; /* 👈 manina */
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 8px;
+    text-align: center;
+    background: #fff;
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+}
+
+.peptide-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.peptide-btn.attivo {
+    border: 3px solid #f29e4c;
+    box-shadow: 0 0 14px rgba(242,158,76,0.6);
+    transform: scale(1.03);
+}
+
+.peptide-title {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #2a3f5f;
+}
+
+.peptide-btn img {
+    width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: white;
+}
    
 /* =========================
    BOTTONI
@@ -193,31 +232,35 @@ Select a <b>Peptide</b>, an <b>AMBER Force Field</b>, and a <b>Water Model</b> t
 
 <div class="container">
 
-  <div class="colonna col-peptide" data-col="peptide">
+ <div class="colonna col-peptide" data-col="peptide">
   <h3>Peptide</h3>
 
-  <div class="btn-wrapper peptide-btn" data-val="H1">
-    <img src="h1.png" alt="H1 α-helix">
-    <div class="label">H1 α-helix</div>
-  </div>
+  <div class="peptide-grid">
 
-  <div class="btn-wrapper peptide-btn" data-val="H2">
-    <img src="h2.png" alt="H2 α-helix">
-    <div class="label">H2 α-helix</div>
-  </div>
+    <div class="peptide-btn" data-val="H1">
+      <div class="peptide-title">H1 α-helix</div>
+      <img src="h1.png" alt="H1 α-helix">
+    </div>
 
-  <div class="btn-wrapper peptide-btn" data-val="B1">
-    <img src="b1.png" alt="B1 β-hairpin">
-    <div class="label">B1 β-hairpin</div>
-  </div>
+    <div class="peptide-btn" data-val="H2">
+      <div class="peptide-title">H2 α-helix</div>
+      <img src="h2.png" alt="H2 α-helix">
+    </div>
 
-  <div class="btn-wrapper peptide-btn" data-val="B2">
-    <img src="b2.png" alt="B2 β-hairpin">
-    <div class="label">B2 β-hairpin</div>
+    <div class="peptide-btn" data-val="B1">
+      <div class="peptide-title">B1 β-hairpin</div>
+      <img src="b1.png" alt="B1 β-hairpin">
+    </div>
+
+    <div class="peptide-btn" data-val="B2">
+      <div class="peptide-title">B2 β-hairpin</div>
+      <img src="b2.png" alt="B2 β-hairpin">
+    </div>
+
   </div>
 </div>
 
-  </div>
+</div>
    
    <!-- FORCE FIELD -->
   <div class="colonna" data-col="ff">
