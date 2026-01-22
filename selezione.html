@@ -99,38 +99,41 @@ h1 {
 }
 
 .peptide-btn {
-    cursor: pointer; /* 👈 manina */
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    padding: 8px;
-    text-align: center;
-    background: #fff;
-    transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+  cursor: pointer;       /* 👈 manina */
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 8px;
+  text-align: center;
+  background: #fff;
+  transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .peptide-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .peptide-btn.attivo {
-    border: 3px solid #f29e4c;
-    box-shadow: 0 0 14px rgba(242,158,76,0.6);
-    transform: scale(1.03);
+  border: 3px solid #f29e4c;
+  box-shadow: 0 0 14px rgba(242,158,76,0.6);
+  transform: scale(1.03);
 }
 
 .peptide-title {
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #2a3f5f;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #2a3f5f;
 }
 
 .peptide-btn img {
-    width: 100%;
-    max-height: 120px;
-    object-fit: contain;
-    border-radius: 6px;
-    background: white;
+  width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: white;
 }
    
 /* =========================
@@ -258,7 +261,6 @@ Select a <b>Peptide</b>, an <b>AMBER Force Field</b>, and a <b>Water Model</b> t
     </div>
 
   </div>
-</div>
 
 </div>
    
@@ -310,52 +312,36 @@ Select a <b>Peptide</b>, an <b>AMBER Force Field</b>, and a <b>Water Model</b> t
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+  const selections = {};
 
-    const selections = {};
-
-    // =====================
-    // PEPTIDI
-    // =====================
-    document.querySelectorAll(".peptide-btn").forEach(el => {
-        el.addEventListener("click", () => {
-
-            document.querySelectorAll(".peptide-btn")
-                .forEach(p => p.classList.remove("attivo"));
-
-            el.classList.add("attivo");
-            selections.peptide = el.dataset.val;
-
-            goToResults();
-        });
+  // Peptide
+  document.querySelectorAll(".peptide-btn").forEach(el => {
+    el.addEventListener("click", () => {
+      document.querySelectorAll(".peptide-btn").forEach(p => p.classList.remove("attivo"));
+      el.classList.add("attivo");
+      selections.peptide = el.dataset.val;
+      // rimuovo subito lo stato prima di cambiare pagina
+      setTimeout(() => goToResults(), 100);
     });
+  });
 
-    // =====================
-    // FORCE FIELD + WATER
-    // =====================
-    document.querySelectorAll(".colonna").forEach(colonna => {
-        const buttons = colonna.querySelectorAll(".btn");
-
-        buttons.forEach(btn => {
-            btn.addEventListener("click", () => {
-                buttons.forEach(b => b.classList.remove("attivo"));
-                btn.classList.add("attivo");
-
-                selections[colonna.dataset.col] = btn.dataset.val;
-                goToResults();
-            });
-        });
+  // FF + Water
+  document.querySelectorAll(".colonna").forEach(col => {
+    const buttons = col.querySelectorAll(".btn");
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("attivo"));
+        btn.classList.add("attivo");
+        selections[col.dataset.col] = btn.dataset.val;
+        setTimeout(() => goToResults(), 100);
+      });
     });
+  });
 
-    // =====================
-    // NAVIGAZIONE
-    // =====================
-    function goToResults() {
-        if (!selections.peptide || !selections.ff || !selections.water) return;
-
-        const url = `results.html?peptide=${selections.peptide}&ff=${selections.ff}&water=${selections.water}`;
-        window.location.href = url;
-    }
-
+  function goToResults() {
+    if (!selections.peptide || !selections.ff || !selections.water) return;
+    window.location.href = `results.html?peptide=${selections.peptide}&ff=${selections.ff}&water=${selections.water}`;
+  }
 });
 </script>
 </body>
