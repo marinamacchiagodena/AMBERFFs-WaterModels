@@ -266,6 +266,36 @@ Select a <b>Peptide</b>, an <b>AMBER Force Field</b>, and a <b>Water Model</b> t
 <!-- <iframe id="viewer"></iframe> -->
 
 <script>
+document.querySelectorAll(".peptide-btn").forEach(el => {
+    el.addEventListener("click", () => {
+        document.querySelectorAll(".peptide-btn")
+            .forEach(p => p.classList.remove("attivo"));
+
+        el.classList.add("attivo");
+        selections.peptide = el.dataset.val;
+        goToResults();
+    });
+});
+</script>
+
+<script>
+const selections = {};
+
+document.querySelectorAll(".peptide-btn").forEach(el => {
+    el.addEventListener("click", () => {
+
+        document.querySelectorAll(".peptide-btn")
+            .forEach(p => p.classList.remove("attivo"));
+
+        el.classList.add("attivo");
+        selections.peptide = el.dataset.val;
+
+        goToResults();
+    });
+});
+</script>
+   
+<script>
 const selections = {};
 
 document.querySelectorAll(".colonna").forEach(colonna => {
