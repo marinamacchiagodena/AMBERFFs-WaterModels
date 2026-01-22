@@ -271,30 +271,20 @@ document.querySelectorAll(".colonna").forEach(colonna => {
 
     buttons.forEach(btn => {
         btn.addEventListener("click", () => {
-            // rimuovi classe attivo dagli altri pulsanti
             buttons.forEach(b => b.classList.remove("attivo"));
-            // aggiungi attivo al pulsante cliccato
             btn.classList.add("attivo");
 
             selections[colonna.dataset.col] = btn.dataset.val;
-            loadPDF();
+            goToResults();
         });
     });
 });
-   
-function loadPDF() {
+
+function goToResults() {
     if (!selections.peptide || !selections.ff || !selections.water) return;
 
-    const pdfPath = `pdf/${selections.peptide}_${selections.ff}_${selections.water}.pdf`;
-    const link = document.createElement("a");
-
-    link.href = pdfPath;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const url = `results.html?peptide=${selections.peptide}&ff=${selections.ff}&water=${selections.water}`;
+    window.location.href = url;
 }
 </script>
 
