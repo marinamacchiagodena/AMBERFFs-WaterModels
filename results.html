@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AMBER Results</title>
+
+<style>
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2a3f5f;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.info-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.info-box {
+    text-align: center;
+}
+
+.info-box button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #6c8cd5;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.info-box button:hover {
+    background: #5a78c1;
+}
+
+.caption {
+    font-size: 12px;
+    color: #555;
+    margin-top: 6px;
+}
+
+#content {
+    margin-top: 30px;
+    padding: 15px;
+    border: 1px dashed #ccc;
+    border-radius: 6px;
+    min-height: 120px;
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="title"></h1>
+
+<div class="container">
+
+  <div class="info-buttons">
+
+    <div class="info-box">
+      <button onclick="showInfo('rmsd')">RMSD</button>
+      <div class="caption">Structural stability over time</div>
+    </div>
+
+    <div class="info-box">
+      <button onclick="showInfo('secondary')">Secondary Structure</button>
+      <div class="caption">α-helix / β-sheet evolution</div>
+    </div>
+
+    <div class="info-box">
+      <button onclick="showInfo('energy')">Energy</button>
+      <div class="caption">Potential and kinetic energy</div>
+    </div>
+
+    <div class="info-box">
+      <button onclick="showInfo('hbond')">H-bonds</button>
+      <div class="caption">Hydrogen bond analysis</div>
+    </div>
+
+  </div>
+
+  <div id="content">
+    Select one analysis to display the results.
+  </div>
+
+</div>
+
+<script>
+// Legge parametri URL
+const params = new URLSearchParams(window.location.search);
+const peptide = params.get("peptide");
+const ff = params.get("ff");
+const water = params.get("water");
+
+// Titolo dinamico
+document.getElementById("title").textContent =
+  `${peptide} | ${ff} | ${water}`;
+
+// Contenuto dinamico
+function showInfo(type) {
+    const content = document.getElementById("content");
+
+    switch(type) {
+        case "rmsd":
+            content.innerHTML = "<b>RMSD analysis</b><br>Here you can load plots, images or iframes.";
+            break;
+        case "secondary":
+            content.innerHTML = "<b>Secondary structure</b><br>DSSP or similar analysis.";
+            break;
+        case "energy":
+            content.innerHTML = "<b>Energy profile</b><br>Potential / kinetic energy trends.";
+            break;
+        case "hbond":
+            content.innerHTML = "<b>Hydrogen bonds</b><br>Occupancy and lifetime.";
+            break;
+    }
+}
+</script>
+
+</body>
+</html>
