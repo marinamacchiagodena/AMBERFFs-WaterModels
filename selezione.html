@@ -281,6 +281,9 @@ document.querySelectorAll(".peptide-btn").forEach(el => {
 <script>
 const selections = {};
 
+// =====================
+// PEPTIDI
+// =====================
 document.querySelectorAll(".peptide-btn").forEach(el => {
     el.addEventListener("click", () => {
 
@@ -293,11 +296,10 @@ document.querySelectorAll(".peptide-btn").forEach(el => {
         goToResults();
     });
 });
-</script>
-   
-<script>
-const selections = {};
 
+// =====================
+// FORCE FIELD + WATER
+// =====================
 document.querySelectorAll(".colonna").forEach(colonna => {
     const buttons = colonna.querySelectorAll(".btn");
 
@@ -312,6 +314,9 @@ document.querySelectorAll(".colonna").forEach(colonna => {
     });
 });
 
+// =====================
+// NAVIGAZIONE
+// =====================
 function goToResults() {
     if (!selections.peptide || !selections.ff || !selections.water) return;
 
