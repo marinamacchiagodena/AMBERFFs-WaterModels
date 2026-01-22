@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AMBER Peptide Dynamics – Interactive Results</title>
+<style>
+/* =========================
+   STILE GENERALE
+   ========================= */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    background: #f5f7fa;
+    color: #222;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    color: #2a3f5f;
+    margin: 20px 0 10px;
+    line-height: 1.4;
+}
+
+/* =========================
+   CONTAINER
+   ========================= */
+.container {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* =========================
+   COLONNE
+   ========================= */
+.colonna {
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.colonna:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.col-peptide {
+    width: 300px;
+}
+
+.colonna:not(.col-peptide) {
+    width: 230px;
+}
+
+/* titoli colonna */
+.colonna h3 {
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #3a4f6b;
+    margin: 0 0 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 6px;
+    text-align: center;
+}
+.colonna[data-col="water"] {
+  display: flex;
+  flex-direction: column; /* verticale come le altre colonne */
+  gap: 10px; /* spazio tra titolo e pulsanti */
+}
+
+.colonna[data-col="water"] .sub-col-wrapper {
+  display: flex; /* i due sub-col diventano affiancati */
+  gap: 10px; /* spazio tra le due sotto-colonne */
+}
+
+.colonna[data-col="water"] .sub-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1; /* occupa metà della riga */
+}
+
+   
+/* =========================
+   BOTTONI
+   ========================= */
+.btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s, border 0.2s;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* palette elegante e allegra */
+.colonna[data-col="ff"] .btn { background-color: #6c8cd5; }
+.colonna[data-col="ff"] .btn:hover { background-color: #5a78c1; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+
+.colonna[data-col="water"] .btn { background-color: #4db6ac; }
+.colonna[data-col="water"] .btn:hover { background-color: #3ca393; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+
+.col-peptide .btn { background-color: #f29e4c; }
+.col-peptide .btn:hover { background-color: #e68930; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+
+/* =========================
+   BOTTONI ATTIVI
+   ========================= */
+.colonna[data-col="ff"] .btn.attivo {
+    border: 3px solid #3a5bb0;
+    box-shadow: 0 0 12px rgba(108,140,213,0.5);
+    transform: scale(1.03);
+}
+
+.colonna[data-col="water"] .btn.attivo {
+    border: 3px solid #2f8b7c;
+    box-shadow: 0 0 12px rgba(77,182,172,0.5);
+    transform: scale(1.03);
+}
+
+.col-peptide .btn.attivo {
+    border: 3px solid #d9772a;
+    box-shadow: 0 0 12px rgba(242,158,76,0.5);
+    transform: scale(1.03);
+}
+
+/* =========================
+   PEPTIDE: WRAPPER + FIGURE
+   ========================= */
+.btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-wrapper img {
+    width: 100%;
+    max-height: 130px;
+    object-fit: contain;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+    transition: transform 0.15s;
+}
+
+.btn-wrapper img:hover {
+    transform: scale(1.02);
+}
+
+/* =========================
+   INFO + IFRAME
+   ========================= */
+#info {
+    margin: 12px 0;
+    font-size: 13px;
+    color: #555;
+    text-align: center;
+}
+
+iframe {
+    width: 100%;
+    height: 75vh;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+}
+</style>
+</head>
+<body>
+
+<h1>
+Select a <b>Peptide</b>, an <b>AMBER Force Field</b>, and a <b>Water Model</b> to visualize the results.
+</h1>
+
+<div class="container">
+
+  <!-- PEPTIDE -->
+  <div class="colonna col-peptide" data-col="peptide">
+    <h3>Peptide</h3>
+
+    <div class="btn-wrapper">
+      <button class="btn" data-val="H1">H1 α-helix</button>
+      <img src="h1.png" alt="H1 α-helix">
+    </div>
+
+    <div class="btn-wrapper">
+      <button class="btn" data-val="H2">H2 α-helix</button>
+      <img src="h2.png" alt="H2 α-helix">
+    </div>
+
+    <div class="btn-wrapper">
+      <button class="btn" data-val="B1">B1 β-hairpin</button>
+      <img src="b1.png" alt="B1 β-hairpin">
+    </div>
+
+    <div class="btn-wrapper">
+      <button class="btn" data-val="B2">B2 β-hairpin</button>
+      <img src="b2.png" alt="B2 β-hairpin">
+    </div>
+  </div>
+
+  <!-- FORCE FIELD -->
+  <div class="colonna" data-col="ff">
+    <h3>Force Field</h3>
+    <button class="btn" data-val="ff99SB-ILDN">ff99SB-ILDN</button>
+    <button class="btn" data-val="ff14SB">ff14SB</button>
+    <button class="btn" data-val="ff19SB">ff19SB</button>
+    <button class="btn" data-val="ff15ipq">ff15ipq</button>
+    <button class="btn" data-val="ff-FB15">FB15</button>
+  </div>
+
+<div class="colonna" data-col="water">
+  <h3>Water Model</h3>
+  <div class="sub-col-wrapper">
+    <div class="sub-col">
+      <button class="btn" data-val="SPC">SPC</button>
+      <button class="btn" data-val="TIP3P">TIP3P</button>
+      <button class="btn" data-val="SPC-E">SPC/E</button>
+      <button class="btn" data-val="TIP3P-EW">TIP3P-Ew</button>
+      <button class="btn" data-val="SPC-Eb">SPC/Eb</button>
+      <button class="btn" data-val="TIP3P-FB">TIP3P-FB</button>
+      <button class="btn" data-val="SPC-ε">SPC/ε</button>
+      <button class="btn" data-val="OPC3">OPC3</button>
+      <button class="btn" data-val="TIP3-ST">TIP3P-ST</button>
+    </div>
+    <div class="sub-col">
+      <button class="btn" data-val="TIP4P">TIP4P</button>
+      <button class="btn" data-val="TIP4P-EW">TIP4P-Ew</button>
+      <button class="btn" data-val="TIP4P-2005">TIP4P/2005</button>
+      <button class="btn" data-val="TIP4P-FB">TIP4P-FB</button>
+      <button class="btn" data-val="OPC">OPC</button>
+      <button class="btn" data-val="TIP4P-ε">TIP4P/ε</button>
+      <button class="btn" data-val="TIP4P-D">TIP4P-D</button>
+      <button class="btn" data-val="a99SB-disp">a99SB-disp</button>
+      <button class="btn" data-val="TIP4P-ST">TIP4P-ST</button>
+      <button class="btn" data-val="TIP4P-BG">TIP4P-BG</button>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<div id="info"></div>
+<!-- <iframe id="viewer"></iframe> -->
+
+<script>
+const selections = {};
+
+document.querySelectorAll(".colonna").forEach(colonna => {
+    const buttons = colonna.querySelectorAll(".btn");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            buttons.forEach(b => b.classList.remove("attivo"));
+            btn.classList.add("attivo");
+
+            selections[colonna.dataset.col] = btn.dataset.val;
+            goToResults();
+        });
+    });
+});
+
+function goToResults() {
+    if (!selections.peptide || !selections.ff || !selections.water) return;
+
+    const url = `results.html?peptide=${selections.peptide}&ff=${selections.ff}&water=${selections.water}`;
+    window.location.href = url;
+}
+</script>
+
+</body>
+</html>
