@@ -265,65 +265,56 @@ Select a <b>Peptide</b>, an <b>AMBER Force Field</b>, and a <b>Water Model</b> t
 <div id="info"></div>
 <!-- <iframe id="viewer"></iframe> -->
 
-<script>
-document.querySelectorAll(".peptide-btn").forEach(el => {
-    el.addEventListener("click", () => {
-        document.querySelectorAll(".peptide-btn")
-            .forEach(p => p.classList.remove("attivo"));
-
-        el.classList.add("attivo");
-        selections.peptide = el.dataset.val;
-        goToResults();
-    });
-});
-</script>
 
 <script>
-const selections = {};
+document.addEventListener("DOMContentLoaded", () => {
 
-// =====================
-// PEPTIDI
-// =====================
-document.querySelectorAll(".peptide-btn").forEach(el => {
-    el.addEventListener("click", () => {
+    const selections = {};
 
-        document.querySelectorAll(".peptide-btn")
-            .forEach(p => p.classList.remove("attivo"));
+    // =====================
+    // PEPTIDI
+    // =====================
+    document.querySelectorAll(".peptide-btn").forEach(el => {
+        el.addEventListener("click", () => {
 
-        el.classList.add("attivo");
-        selections.peptide = el.dataset.val;
+            document.querySelectorAll(".peptide-btn")
+                .forEach(p => p.classList.remove("attivo"));
 
-        goToResults();
-    });
-});
+            el.classList.add("attivo");
+            selections.peptide = el.dataset.val;
 
-// =====================
-// FORCE FIELD + WATER
-// =====================
-document.querySelectorAll(".colonna").forEach(colonna => {
-    const buttons = colonna.querySelectorAll(".btn");
-
-    buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            buttons.forEach(b => b.classList.remove("attivo"));
-            btn.classList.add("attivo");
-
-            selections[colonna.dataset.col] = btn.dataset.val;
             goToResults();
         });
     });
+
+    // =====================
+    // FORCE FIELD + WATER
+    // =====================
+    document.querySelectorAll(".colonna").forEach(colonna => {
+        const buttons = colonna.querySelectorAll(".btn");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                buttons.forEach(b => b.classList.remove("attivo"));
+                btn.classList.add("attivo");
+
+                selections[colonna.dataset.col] = btn.dataset.val;
+                goToResults();
+            });
+        });
+    });
+
+    // =====================
+    // NAVIGAZIONE
+    // =====================
+    function goToResults() {
+        if (!selections.peptide || !selections.ff || !selections.water) return;
+
+        const url = `results.html?peptide=${selections.peptide}&ff=${selections.ff}&water=${selections.water}`;
+        window.location.href = url;
+    }
+
 });
-
-// =====================
-// NAVIGAZIONE
-// =====================
-function goToResults() {
-    if (!selections.peptide || !selections.ff || !selections.water) return;
-
-    const url = `results.html?peptide=${selections.peptide}&ff=${selections.ff}&water=${selections.water}`;
-    window.location.href = url;
-}
 </script>
-
 </body>
 </html>
