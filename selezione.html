@@ -56,9 +56,18 @@ h1 {
 }
 
 .col-peptide {
-    width: 360px;
+    width: 350px; /* più larga delle altre colonne */
+    padding: 20px;
 }
 
+.peptide-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* più spazio tra le caselle dei peptidi */
+}
+
+
+   
 .colonna:not(.col-peptide) {
     width: 230px;
 }
@@ -107,7 +116,7 @@ h1 {
     cursor: pointer;
     border: 2px solid #ddd;
     border-radius: 10px;
-    padding: 12px;
+    padding: 16px;
     text-align: center;
     background: #fff;
     transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
@@ -132,13 +141,16 @@ h1 {
 
 .peptide-btn img {
     width: 100%;
-    max-height: 150px;
+    max-height: 200px;
     object-fit: contain;
     border-radius: 6px;
     border: 2px solid #ccc; /* cornice */
     background: white;
-}
+  }
+   
 
+
+ 
 /* =========================
    BOTTONI FF + WATER
    ========================= */
