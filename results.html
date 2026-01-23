@@ -78,23 +78,23 @@ h1 {
 
     <div class="info-box">
       <button onclick="showInfo('rmsd')">DSSP</button>
-      <div class="caption"> <p align="justify"> Define Secondary Structure of Proteins. Color Code: <span style="background-color: blue;">blue</span>, α-helix; <font color="green">green</font>, bent; <font color="yellow">yellow
+      <div class="caption"> <p align="justify"> Define Secondary Structure of Proteins. Color Code:  <font color="blue">blue</font>, α-helix; <font color="green">green</font>, bent; <font color="yellow">yellow
       </font>, turn; <font color="dark violet">violet</font>, π-helix; <font color="gray">gray</font>, 3-helix; white, coil; <font color="red">red</font>, β-strand; <font color="black">black</font>: β-bridge. </p> </div>
     </div>
 
     <div class="info-box">
-      <button onclick="showInfo('secondary')">Secondary Structure</button>
-      <div class="caption">α-helix / β-sheet evolution</div>
+      <button onclick="showInfo('secondary')">Unfolding Process</button>
+      <div class="caption">Unfolding process calculated by averaging the DSSP results of the 15 MD simulations, each of 20 ns.</div>
     </div>
 
     <div class="info-box">
-      <button onclick="showInfo('energy')">Energy</button>
-      <div class="caption">Potential and kinetic energy</div>
+      <button onclick="showInfo('energy')">DSSE</button>
+      <div class="caption"> DSSP-based Secondary Structure Entropy. For details about this quantity, please refer to the <a href="https://pubs.acs.org/doi/10.1021/acsomega.0c01337">paper </a>.</div>
     </div>
 
     <div class="info-box">
-      <button onclick="showInfo('hbond')">H-bonds</button>
-      <div class="caption">Hydrogen bond analysis</div>
+      <button onclick="showInfo('hbond')">Heatmap</button>
+      <div class="caption">Heatmap showing the % of the calculated conformer population using different FF-water model combinations.</div>
     </div>
 
   </div>
