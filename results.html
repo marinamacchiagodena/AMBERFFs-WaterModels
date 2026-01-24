@@ -3,137 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <title>AMBER Results</title>
-
 <style>
-body {
-    font-family: Helvetica, Arial, sans-serif;
-    background: #f5f7fa;
-    margin: 0;
-    padding: 20px;
-}
-
-h1 {
-    text-align: center;
-    color: #2a3f5f;
-}
-
-.container {
-    max-width: 900px;
-    margin: 30px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.info-buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-top: 20px;
-}
-
-.info-box {
-    text-align: center;
-}
-
-.info-box button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    background: #6c8cd5;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.info-box button:hover {
-    background: #5a78c1;
-}
-
-.caption {
-    font-size: 12px;
-    color: #555;
-    margin-top: 6px;
-}
-
-#content {
-    margin-top: 30px;
-    padding: 15px;
-    border: 1px dashed #ccc;
-    border-radius: 6px;
-    min-height: 120px;
-}
+body { font-family: Helvetica, Arial, sans-serif; background: #f5f7fa; margin:0; padding:20px; }
+h1 { text-align: center; color: #2a3f5f; }
+.container { max-width: 900px; margin:30px auto; background:white; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+.info-buttons { display:grid; grid-template-columns: repeat(4,1fr); gap:16px; margin-top:20px; }
+.info-box { text-align:center; }
+.info-box button { width:100%; padding:12px; border:none; border-radius:6px; background:#6c8cd5; color:white; font-size:14px; cursor:pointer; }
+.info-box button:hover { background:#5a78c1; }
+.caption { font-size:12px; color:#555; margin-top:6px; }
+#content { margin-top:30px; padding:15px; border:1px dashed #ccc; border-radius:6px; min-height:120px; text-align:center; font-weight:bold; }
 </style>
 </head>
-
 <body>
 
-<h1 id="title"></h1>
+<h1 id="title">AMBER Results</h1>
 
 <div class="container">
 
   <div class="info-buttons">
-
     <div class="info-box">
-      <button onclick="showInfo('rmsd')">DSSP</button>
-      <div class="caption">  Define Secondary Structure of Proteins. Color Code:  <font color="blue">blue</font>, α-helix; <font color="green">green</font>, bent; <font color="yellow">yellow
-      </font>, turn; <font color="darkviolet">violet</font>, π-helix; <font color="gray">gray</font>, 3-helix; white, coil; <font color="red">red</font>, β-strand; <font color="black">black</font>: β-bridge. </div>
+      <button onclick="showInfo('DSSP')">DSSP</button>
+      <div class="caption">Define Secondary Structure of Proteins.</div>
     </div>
-
     <div class="info-box">
-      <button onclick="showInfo('secondary')">Unfolding Process</button>
-      <div class="caption">Unfolding process calculated by averaging the DSSP results of the 15 MD simulations, each of 20 ns.</div>
+      <button onclick="showInfo('Unfolding Process')">Unfolding Process</button>
+      <div class="caption">Unfolding process averaging DSSP results of 15 MD simulations.</div>
     </div>
-
     <div class="info-box">
-      <button onclick="showInfo('energy')">DSSE</button>
-      <div class="caption"> DSSP-based Secondary Structure Entropy. For details about this quantity, please refer to the <a href="https://pubs.acs.org/doi/10.1021/acsomega.0c01337">paper </a>.</div>
+      <button onclick="showInfo('DSSE')">DSSE</button>
+      <div class="caption">DSSP-based Secondary Structure Entropy.</div>
     </div>
-
     <div class="info-box">
-      <button onclick="showInfo('hbond')">Heatmap</button>
-      <div class="caption">Heatmap showing the % of the calculated conformer population using different FF-water model combinations.</div>
+      <button onclick="showInfo('Heatmap')">Heatmap</button>
+      <div class="caption">Heatmap showing conformer populations.</div>
     </div>
-
   </div>
 
-  <div id="content">
-    Select one analysis to display the results.
-  </div>
+  <div id="content">Please select an analysis to view the PDF.</div>
 
 </div>
 
 <script>
-// Legge parametri URL
-const params = new URLSearchParams(window.location.search);
-const peptide = params.get("peptide");
-const ff = params.get("ff");
-const water = params.get("water");
+// ======================
+// Legge parametri dall'URL
+// ======================
+let peptide = "", ff = "", water = "";
 
-// Titolo dinamico
-document.getElementById("title").textContent =
-  `${peptide} | ${ff} | ${water}`;
+function getURLParams() {
+    const params = new URLSearchParams(window.location.search);
+    peptide = params.get("peptide") || "";
+    ff = params.get("ff") || "";
+    water = params.get("water") || "";
 
-// Contenuto dinamico
+    const titleEl = document.getElementById("title");
+    if(peptide && ff && water) {
+        titleEl.textContent = `${peptide} | ${ff} | ${water}`;
+    }
+}
+
+getURLParams();
+
+// ======================
+// Mapping tipo PDF
+// ======================
+function getSafeType(type) {
+    const map = {
+        "DSSP": "DSSP",
+        "Unfolding Process": "UNFOLDING",
+        "DSSE": "DSSE",
+        "Heatmap": "HEATMAP"
+    };
+    return map[type] || type.toUpperCase();
+}
+
+// ======================
+// Mostra PDF solo al click
+// ======================
 function showInfo(type) {
     const content = document.getElementById("content");
 
-    switch(type) {
-        case "rmsd":
-            content.innerHTML = "<b>RMSD analysis</b><br>Here you can load plots, images or iframes.";
-            break;
-        case "secondary":
-            content.innerHTML = "<b>Secondary structure</b><br>DSSP or similar analysis.";
-            break;
-        case "energy":
-            content.innerHTML = "<b>Energy profile</b><br>Potential / kinetic energy trends.";
-            break;
-        case "hbond":
-            content.innerHTML = "<b>Hydrogen bonds</b><br>Occupancy and lifetime.";
-            break;
+    if(!peptide || !ff || !water){
+        content.innerHTML = "<b>Please select Peptide, FF, and Water first.</b>";
+        return;
     }
+
+    const safeType = getSafeType(type);
+    const pdfFile = `${peptide}_${ff}_${water}_${safeType}.pdf`;
+    const pdfPath = `pdf/${encodeURIComponent(pdfFile)}`;
+
+    console.log("PDF path generato:", pdfPath);
+
+    content.innerHTML = `
+        <embed src="${pdfPath}" type="application/pdf" width="100%" height="600px" />
+    `;
 }
 </script>
 
