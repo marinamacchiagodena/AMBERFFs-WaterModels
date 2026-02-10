@@ -23,13 +23,13 @@ The peptides studied have the following characteristics: </p>
 </tr>
 </thead>
 <tfoot>
-<tr><td>B2</td><th><a href="https://www.rcsb.org/structure/2GB1" target="_blank" rel="noopener noreferrer">2GB1(41-56)</a></th><th>GEWTYDDATKTFTVTE </th><th>ß-hairpin</th><th> <a href="https://www.nature.com/articles/nsb0994-584" target="_blank" rel="noopener noreferrer"> 62% </a> </th> <td>25%</td> </tr>
+<tr><td>B2</td><th><a href="https://www.rcsb.org/structure/2GB1" target="_blank" rel="noopener noreferrer">2GB1(41-56)</a></th><th>GEWTYDDATKTFTVTE </th><th>ß-hairpin</th><th> <a href="https://www.nature.com/articles/nsb0994-584" target="_blank" rel="noopener noreferrer"> 62% </a> </th> <td> <a href="https://www.nature.com/articles/nsb0994-584" target="_blank" rel="noopener noreferrer">25%  </a></td> </tr>
 </tfoot>
 <tbody>
-<tr><td> H1 </td><th><a href="https://www.rcsb.org/structure/1DJF" target="_blank" rel="noopener noreferrer"> 1DJF </a></th><th>QAPAYKKAAKKLAES </th><th> α-helix  </th><th> <a href="https://pubs.acs.org/doi/10.1021/bi000208x" target="_blank" rel="noopener noreferrer"> 73% </a>  </th> <td>5%</td></tr>
- <tr><td>H2</td><th><a href="https://www.rcsb.org/structure/1L2Y" target="_blank" rel="noopener noreferrer">1L2Y</a></th><th>NLYIQWLKDGGPSSGRPPPS </th><th>α-helix</th><th><a href="https://www.nature.com/articles/nsb798" target="_blank" rel="noopener noreferrer"> 35% </a> </th> <td>35%</td></tr>
+<tr><td> H1 </td><th><a href="https://www.rcsb.org/structure/1DJF" target="_blank" rel="noopener noreferrer"> 1DJF </a></th><th>QAPAYKKAAKKLAES </th><th> α-helix  </th><th> <a href="https://pubs.acs.org/doi/10.1021/bi000208x" target="_blank" rel="noopener noreferrer"> 73% </a>  </th> <td><a href="https://pubs.acs.org/doi/10.1021/bi000208x" target="_blank" rel="noopener noreferrer"> 5% </a> </td></tr>
+ <tr><td>H2</td><th><a href="https://www.rcsb.org/structure/1L2Y" target="_blank" rel="noopener noreferrer">1L2Y</a></th><th>NLYIQWLKDGGPSSGRPPPS </th><th>α-helix</th><th><a href="https://www.nature.com/articles/nsb798" target="_blank" rel="noopener noreferrer"> 35% </a> </th> <td> <a href="https://www.nature.com/articles/nsb798" target="_blank" rel="noopener noreferrer"> 35% </a> </td></tr>
  <tr><td>B1</td><th><a href="https://www.rcsb.org/structure/2GB1" target="_blank" rel="noopener noreferrer">2GB1(2-19)</a></th><th> TYKLILNGKTLKGETTTE</th><th>ß-hairpin</th> <th>
-<a href="https://pubs.acs.org/doi/abs/10.1021/bi00185a041" target="_blank" rel="noopener noreferrer"> 55% </a>  </th> <td>5%</td></tr>
+<a href="https://pubs.acs.org/doi/abs/10.1021/bi00185a041" target="_blank" rel="noopener noreferrer"> 55% </a>  </th> <td> <a href="https://pubs.acs.org/doi/abs/10.1021/bi00185a041" target="_blank" rel="noopener noreferrer">5% </a> </td></tr>
 </tbody>
 </table>
 <p style="text-align:justify">
