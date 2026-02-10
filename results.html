@@ -24,15 +24,21 @@ h1 { text-align: center; color: #2a3f5f; }
   <div class="info-buttons">
     <div class="info-box">
       <button onclick="showInfo('DSSP')">DSSP</button>
-      <div class="caption">Define Secondary Structure of Proteins.</div>
+      <div class="caption">Define Secondary Structure of Proteins calculated from the 15 MD simulations of 20 ns each (300 ns
+in total). Color Code: blue, α-helix; green, bent; yellow, turn; violet, π-helix; gray: 3-helix; white, coil; red, β-strand; black: β-bridge. </div>
     </div>
     <div class="info-box">
       <button onclick="showInfo('Unfolding Process')">Unfolding Process</button>
-      <div class="caption">Unfolding process averaging DSSP results of 15 MD simulations.</div>
+      <div class="caption">Unfolding process calculated by averaging the DSSP results of the 15 MD simulations. On the y-axis, the percentage
+of helicity, and on the x-axis, the time in ns. The shade area represents the error computed with bootstrap resampling. In blue, ff99SB-ILDN; 
+        in green, ff-FB15; in yellow, ff15ipq; in red, ff14SB; and in violet, ff19SB. </div>
     </div>
     <div class="info-box">
       <button onclick="showInfo('DSSE')">DSSE</button>
-      <div class="caption">DSSP-based Secondary Structure Entropy.</div>
+      <div class="caption">DSSP-based Secondary Structure Entropy calculated from the 15 repetitions with all selected FFs and the 
+        TIP4P-D water model: in blue, ff99SB-ILDN; in green, ff-FB15; in yellow, ff15ipq; in red, ff14SB; and in violet, ff19SB. 
+        The shade area represents the error computed with bootstrap resampling.
+      </div>
     </div>
     <div class="info-box">
       <button onclick="showInfo('Heatmap')">Heatmap</button>
