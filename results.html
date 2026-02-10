@@ -29,20 +29,21 @@ in total). Color Code: blue, α-helix; green, bent; yellow, turn; violet, π-hel
     </div>
     <div class="info-box">
       <button onclick="showInfo('Unfolding Process')">Unfolding Process</button>
-      <div class="caption">Unfolding process calculated by averaging the DSSP results of the 15 MD simulations. On the y-axis, the percentage
-of helicity, and on the x-axis, the time in ns. The shade area represents the error computed with bootstrap resampling. In blue, ff99SB-ILDN; 
-        in green, ff-FB15; in yellow, ff15ipq; in red, ff14SB; and in violet, ff19SB. </div>
+      <div class="caption">Unfolding process calculated for the five FFs-TIP4P-D water model combinations by averaging the DSSP results of the
+        15 MD simulations, each of 20 ns. On the y-axis, the percentage of helicity, and on the x-axis, the time in ns. In blue, ff99SB-ILDN; 
+        in green, ff-FB15; in yellow, ff15ipq; in red, ff14SB; and in violet, ff19SB.  The shade area represents the error computed with bootstrap resampling. </div>
     </div>
     <div class="info-box">
       <button onclick="showInfo('DSSE')">DSSE</button>
-      <div class="caption">DSSP-based Secondary Structure Entropy calculated from the 15 repetitions with all selected FFs and the 
-        TIP4P-D water model: in blue, ff99SB-ILDN; in green, ff-FB15; in yellow, ff15ipq; in red, ff14SB; and in violet, ff19SB. 
-        The shade area represents the error computed with bootstrap resampling.
+      <div class="caption">DSSP-based Secondary Structure Entropy calculated from 15 repetitions with the five FFs-TIP4P-D water model
+        combinations: in blue, ff99SB-ILDN; in green, ff-FB15; in yellow, ff15ipq; in red, ff14SB; and in violet, ff19SB.
+        The shade area represents the error computed with bootstrap resampling. 
       </div>
     </div>
     <div class="info-box">
       <button onclick="showInfo('Heatmap')">Heatmap</button>
-      <div class="caption">Heatmap showing conformer populations.</div>
+      <div class="caption">Heatmap showing the deviation of the final α-helix/β-strand content (in \%) from the experimental 
+        findings using different FF-water model combinations. Agreement with experiment increases with the intensity of color. </div>
     </div>
   </div>
 
