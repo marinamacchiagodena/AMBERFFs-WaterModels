@@ -1,7 +1,11 @@
 # Comparative Study of Folded/Unfolded Peptide Dynamics with Modern AMBER Force Fields and Water Models
 <center> <img src="tocAMBER.png" alt="" width="600" height="323"></center> <br>
 <p style="text-align:justify"> On this page we present the results of a comparative study in which 95 combinations of AMBER Force Fields and water models are used to simulate 4 different peptides performing Molecular Dynamics (MD) simulations.
- The four peptides have different secondary structures, and we verify which Force Field-Water Model combination better reproduces the experimental arrangment. Details about the studied systems and the performed analysis can be found in <a href="https://pubs.acs.org/doi/10.1021/bi000208x"> this paper </a>.   
+ The four peptides have different secondary structures, and we verify which Force Field-Water Model combination better reproduces the experimental arrangment.
+ 
+ <p style="background-color: lightblue;">  To visualize the results, it is necessary to select a <b>Peptide</b>, a <b>Force Field</b> and a <b>Water Model</b> <a href="selezione.html"> <b>HERE</b>  </a>.</p>
+ 
+ Details about the studied systems and the performed analysis can be found in <a href="https://pubs.acs.org/doi/10.1021/bi000208x"> this paper </a>.   
 The peptides studied have the following characteristics: </p>
 <table style="width:100%; table-layout: fixed; border-collapse: collapse; text-align:center;">
 <colgroup>
@@ -36,7 +40,7 @@ The peptides studied have the following characteristics: </p>
 The five Force Fields tested are:
 </p>
 <ul>
- <li><a href="https://onlinelibrary.wiley.com/doi/10.1002/prot.22711" target="_blank" rel="noopener noreferrer" > ff99SB-ILDN </a> , <a href="https://pubs.acs.org/doi/10.1021/acs.jctc.5b00255" target="_blank" rel="noopener noreferrer" > ff14SB </a> , <a href="https://pubs.acs.org/doi/10.1021/acs.jctc.9b00591" target="_blank" rel="noopener noreferrer" >  ff19SB </a>, <a href="https://pubs.acs.org/doi/10.1021/acs.jpcb.7b02320" target="_blank" rel="noopener noreferrer" > ff-FB15 </a>, and <a href="https://pubs.acs.org/doi/10.1021/acs.jctc.6b00567" target="_blank" rel="noopener noreferrer" > ff15ipq </a>  with the nineteen Water Models: </li>
+ <li><a href="https://onlinelibrary.wiley.com/doi/10.1002/prot.22711" target="_blank" rel="noopener noreferrer" > ff99SB-ILDN </a> , <a href="https://pubs.acs.org/doi/10.1021/acs.jctc.5b00255" target="_blank" rel="noopener noreferrer" > ff14SB </a> , <a href="https://pubs.acs.org/doi/10.1021/acs.jctc.9b00591" target="_blank" rel="noopener noreferrer" >  ff19SB </a>, <a href="https://pubs.acs.org/doi/10.1021/acs.jpcb.7b02320" target="_blank" rel="noopener noreferrer" > ff-FB15 </a>, and <a href="https://pubs.acs.org/doi/10.1021/acs.jctc.6b00567" target="_blank" rel="noopener noreferrer" > ff15ipq </a>  with the nineteen Water Models: </li> 
      <ul>
         <li><a href="https://link.springer.com/chapter/10.1007/978-94-015-7658-1_21" target="_blank" rel="noopener noreferrer" > SPC </a>, <a href="https://pubs.aip.org/aip/jcp/article- abstract/79/2/926/776316/Comparison-of-simple-potential-functions-for?redirectedFrom=fulltext" target="_blank" rel="noopener noreferrer" > TIP3P </a>, <a href="https://pubs.acs.org/doi/10.1021/j100308a038" target="_blank" rel="noopener noreferrer" > SPC/E </a>, <a href="https://pubs.aip.org/aip/jcp/article/121/20/10096/532393/A-modified-TIP3P-water-potential-for-simulation" target="_blank" rel="noopener noreferrer" >TIP3P-Ew</a>, <a href="https://pubs.acs.org/doi/10.1021/jp301100g" target="_blank" rel="noopener noreferrer" >SPC/Eb</a>, <a href="https://pubs.acs.org/doi/10.1021/jz500737m" target="_blank" rel="noopener noreferrer" >TIP3P-FB</a>, <a href="https://www.sciencedirect.com/science/article/pii/S0378437114009108" target="_blank" rel="noopener noreferrer" >SPC/ϵ</a>, <a href="https://pubs.aip.org/aip/jcp/article-abstract/145/7/074501/810108/Accuracy-limit-of-rigid-3-point-water-models?redirectedFrom=fulltext" target="_blank" rel="noopener noreferrer" >OPC3</a>, <a href="https://pubs.acs.org/doi/10.1021/acs.jpcb.9b05455" target="_blank" rel="noopener noreferrer" >TIP3P-ST;</a></li>
         <li><a href="https://pubs.aip.org/aip/jcp/article-abstract/79/2/926/776316/Comparison-of-simple-potential-functions-for?redirectedFrom=fulltext" target="_blank" rel="noopener noreferrer" >TIP4P</a>, <a href="https://pubs.aip.org/aip/jcp/article-abstract/125/3/034503/564425/Vapor-liquid-equilibria-from-the-triple-point-up?redirectedFrom=fulltext" target="_blank" rel="noopener noreferrer" >TIP4P-Ew</a>, <a href="https://pubs.aip.org/aip/jcp/article-abstract/125/3/034503/564425/Vapor-liquid-equilibria-from-the-triple-point-up?redirectedFrom=fulltext" target="_blank" rel="noopener noreferrer" >TIP4P/2005</a>,
@@ -45,7 +49,6 @@ The five Force Fields tested are:
 </ul>
 
 <br>
-To visualize the results, it is necessary to select a <b>Peptide</b>, a <b>Force Field</b> and a <b>Water Model</b> <a href="selezione.html"> <b>here</b>  </a>.
 <hr>
 <font size="2"> Michele Casoria, Marina Macchiagodena, Anna Maria Papini, Claudia Andreini, Marco Pagliai,Piero Procacci <br>
  Dipartimento di Chimica "Ugo Schiff", Università degli Studi di Firenze, Via della Lastruccia 3, 50019 Sesto Fiorentino, Italy <br>
