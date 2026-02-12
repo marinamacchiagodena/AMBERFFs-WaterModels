@@ -1,7 +1,10 @@
 # Comparative Study of Folded/Unfolded Peptide Dynamics with Modern AMBER Force Fields and Water Models
 <center> <img src="tocAMBER.png" alt="" width="600" height="323"></center> <br>
 <p style="text-align:justify"> On this page we present the results of a comparative study in which 95 combinations of AMBER Force Fields and water models are used to simulate 4 different peptides performing Molecular Dynamics (MD) simulations. The four peptides have different secondary structures, and we verify which Force Field-Water Model combination better reproduces the experimental arrangment.
-
+ 
+<div style="background-color: #f0f8ff; padding: 15px; border-radius: 8px; font-family: Arial, sans-serif;">
+    To visualize the results, it is necessary to select a <b>Peptide</b>, a <b>Force Field</b> and a <b>Water Model</b> <a href="selezione.html" style="color: #007bff;"> <b>HERE</b> </a>.
+</div>
 To visualize the results, it is necessary to select a <b>Peptide</b>, a <b>Force Field</b> and a <b>Water Model</b> <a href="selezione.html"> <b>HERE</b> . </a>
  
  Details about the studied systems and the performed analysis can be found in <a href="https://pubs.acs.org/doi/10.1021/bi000208x"> this paper </a>.   
