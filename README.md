@@ -5,7 +5,6 @@
 <div style="background-color: #f0f8ff; padding: 15px; border-radius: 8px; font-family: Arial, sans-serif;">
     To visualize the results, it is necessary to select a <b>Peptide</b>, a <b>Force Field</b> and a <b>Water Model</b> <a href="selezione.html" style="color: #007bff;"> <b>HERE</b> </a>.
 </div>
-To visualize the results, it is necessary to select a <b>Peptide</b>, a <b>Force Field</b> and a <b>Water Model</b> <a href="selezione.html"> <b>HERE</b> . </a>
  
  Details about the studied systems and the performed analysis can be found in <a href="https://pubs.acs.org/doi/10.1021/bi000208x"> this paper </a>.   
 The peptides studied have the following characteristics: </p>
