@@ -2,7 +2,7 @@
 <center> <img src="tocAMBER.png" alt="" width="600" height="323"></center> <br>
 <p style="text-align:justify"> On this page we present the results of a comparative study in which 95 combinations of AMBER Force Fields and water models are used to simulate 4 different peptides performing Molecular Dynamics (MD) simulations. The four peptides have different secondary structures, and we verify which Force Field-Water Model combination better reproduces the experimental arrangment.
  
-<div style="background-color: #96eb9899; padding: 15px; border-radius: 8px; font-family: Arial, sans-serif;">
+<div style="background-color: #aceb9872; padding: 15px; border-radius: 8px; font-family: Arial, sans-serif;">
     To visualize the results, it is necessary to select a <b>Peptide</b>, a <b>Force Field</b> and a <b>Water Model</b> <a href="selezione.html" style="color: #007bff;"> <b>HERE</b> </a>.
 </div>
  
