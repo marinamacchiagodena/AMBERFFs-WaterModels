@@ -48,8 +48,6 @@ The five Force Fields tested are:
 <a href="https://pubs.acs.org/doi/10.1021/jz500737m" target="_blank" rel="noopener noreferrer" >TIP4P-FB </a>, <a href="https://pubs.acs.org/doi/10.1021/jz501780a" target="_blank" rel="noopener noreferrer" >OPC</a>, <a href="https://pubs.acs.org/doi/10.1021/jp410865y" target="_blank" rel="noopener noreferrer" >TIP4P/ϵ</a>, <a href="https://pubs.acs.org/doi/10.1021/jp508971m" target="_blank" rel="noopener noreferrer" >TIP4P-D</a>, <a href="https://www.pnas.org/doi/full/10.1073/pnas.1800690115" target="_blank" rel="noopener noreferrer" >a99SB-disp</a>, <a href="https://pubs.acs.org/doi/10.1021/acs.jpcb.9b05455" target="_blank" rel="noopener noreferrer" >TIP4P-ST</a>, and <a href="https://pubs.rsc.org/en/content/articlelanding/2021/cp/d0cp05831a" target="_blank" rel="noopener noreferrer" >TIP4P-BG.</a></li>
      </ul>
 </ul>
-
-<br>
 <hr>
 <font size="2"> Michele Casoria, Marina Macchiagodena, Anna Maria Papini, Claudia Andreini, Marco Pagliai,Piero Procacci <br>
  Dipartimento di Chimica "Ugo Schiff", Università degli Studi di Firenze, Via della Lastruccia 3, 50019 Sesto Fiorentino, Italy <br>
